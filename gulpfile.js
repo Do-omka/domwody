@@ -59,7 +59,7 @@ function css() {
 		],
 		// {syntax: require('postcss-less')},
 		))
-		.pipe(sourcemaps.write(''))
+		.pipe(sourcemaps.write())
 		.pipe(gulp.dest('dev/css'))
 }
 
@@ -90,7 +90,7 @@ function js() {
 		.pipe(babel({
 			presets: ['@babel/env']
 		}))
-		.pipe(sourcemaps.write(''))
+		.pipe(sourcemaps.write())
 		.pipe(gulp.dest('dev/js'))
 }
 

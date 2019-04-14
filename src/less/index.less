@@ -2,14 +2,21 @@
 @import (optional) 'index/grid';
 @import (optional) 'index/reset';
 
+.wrapper {
+	margin-left: 150rem;
+	margin-right: 150rem;
+}
+
 body {
-	font-size: 16rem;
+	font-size: 20rem;
 	line-height: 1.25;
+	background-color: rgb(35, 35, 35);
+	color: #fff;
 }
 
 body > header {
 	background-color: #000;
-	color: #fff;
+	font-size: 18rem;
 	
 	.header {
 		display: flex;
@@ -50,4 +57,99 @@ body > header {
 			}
 		}
 	}
+}
+
+.main {
+	display: flex;
+}
+
+.btn {
+	color: #fff;
+	background-color: rgb(149, 36, 38);
+	font-family: Roboto;
+	font-size: 18rem;
+	font-weight: 500;
+	text-align: center;
+	border-radius: 50rem;
+	padding: 16rem;
+	margin-bottom: 1em;
+	width: 290rem;
+	
+	&.invert {
+		background-color: #fff;
+		color: rgb(149, 36, 38);
+		border: 1px solid rgb(149, 36, 38);
+	}
+}
+
+.recall {
+	color: rgb(255, 145, 146);
+	border-bottom: 2px dashed rgb(255, 145, 146);;
+}
+
+h2 {
+	font-family: Roboto;
+	font-size: 48rem;
+	font-weight: 700;
+	line-height: 1.29;
+}
+
+.main_left {
+	h2 {
+		font-size: 28rem;
+		font-weight: 900;
+		line-height: 2;
+		margin-bottom: .5em;
+	}
+}
+
+.aside_categories {
+	background-color: rgb(151, 36, 38);
+	padding: 75rem 60rem 30rem 150rem;
+	
+	li {
+		margin-bottom: 1em;
+	}
+}
+
+.aside_filter {
+	.c;
+	padding-left: 150rem;
+	
+	.btn {
+		align-self: center;
+	}
+	.fieldset {
+		.c;
+		color: #000;
+		background-color: #fff;
+		border-radius: 5rem;
+		overflow: hidden;
+		margin-bottom: 18rem;
+		
+		.legend {
+			display: flex;
+			justify-content: space-between;
+			font-size: 22rem;
+			font-weight: 700;
+			padding: 25rem;
+			border-bottom: 1px solid #f1f1f1;
+		}
+		
+		.list {
+			padding: 20rem 8rem 8rem 28rem;
+			
+			label {
+				margin-bottom: 1em;
+			}
+		}
+	}
+	
+	.total {
+		font-size: 20rem;
+		font-weight: 500;
+		align-self: center;
+		margin-bottom: 1em;
+	}
+	
 }

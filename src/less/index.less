@@ -2,14 +2,30 @@
 @import (optional) 'index/grid';
 @import (optional) 'index/reset';
 
-.wrapper {
-	margin-left: 150rem;
-	margin-right: 150rem;
+html {
+	font-size: .55px;
+	
+	@media @sm {
+		font-size: .6px;
+	}
+	@media @md {
+		font-size: .7px;
+	}
+	@media @lg {
+		font-size: .8px;
+	}
+	@media @xl {
+		font-size: .9px;
+	}
+	@media @xx {
+		font-size: 1px;
+	}
 }
 
 body {
 	font-size: 20rem;
 	line-height: 1.25;
+	font-family: Roboto;
 	background-color: rgb(35, 35, 35);
 	color: #fff;
 }
@@ -19,37 +35,45 @@ body > header {
 	font-size: 18rem;
 	
 	.header {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		padding: 20rem 150rem;
 		border-bottom: 1px solid rgb(159, 2, 1);
+		padding: 20rem 0;
 		
-		.logo {
-			width: 170rem;
-			height: 126rem;
-			margin-right: 170rem;
-		}
-		
-		.tel {
-			.c;
+		.container {
+			.r;
+			justify-content: space-between;
+			align-items: center;
 			
-			> * {
-				margin-bottom: .25em;
+			> :not(:last-child):not(:first-child) {
+				margin-right: 15px;
+				margin-left: 15px;
+			}
+			
+			.logo {
+				max-width: 170rem;
+				
+				@media @xl {
+					margin-right: 170rem;
+				}
+			}
+			
+			.tel {
+				.c;
+				
+				> * {
+					margin-bottom: .25em;
+				}
 			}
 		}
 	}
 	
 	nav {
-		padding: 0 150rem;
-		
 		ul {
-			display: flex;
-			justify-content: space-around;
+			.r;
+			justify-content: center;
 		}
 		
 		a {
-			padding: 20rem 32rem;
+			padding: 20rem 30rem;
 			border-bottom: 4px solid transparent;
 			
 			&:hover {
@@ -59,14 +83,46 @@ body > header {
 	}
 }
 
-.main {
+body > footer {
+	background-color: #000;
+	font-size: 18rem;
+	
+	.footer .row {
+		justify-content: center;
+	
+		.logo {
+			max-width: 304rem;
+		}
+		
+		nav {
+			.c;
+			align-items: center;
+			
+			ul {
+				columns: 2;
+				column-gap: 76rem;
+			}
+		}
+	}
+	
+	.ps {
+		font-size: 16rem;
+		text-align: center;
+		margin-bottom: 1em;
+	}
+}
+
+.logo {
+	filter: drop-shadow(5px 5px 5px #222);
+}
+
+.main .container {
 	display: flex;
 }
 
 .btn {
 	color: #fff;
 	background-color: rgb(149, 36, 38);
-	font-family: Roboto;
 	font-size: 18rem;
 	font-weight: 500;
 	text-align: center;
@@ -88,7 +144,6 @@ body > header {
 }
 
 h2 {
-	font-family: Roboto;
 	font-size: 48rem;
 	font-weight: 700;
 	line-height: 1.29;
@@ -114,7 +169,7 @@ h2 {
 
 .aside_filter {
 	.c;
-	padding-left: 150rem;
+	// padding-left: 150rem;
 	
 	.btn {
 		align-self: center;

@@ -101,7 +101,7 @@ function min_js() {
 }
 
 function min_img() {
-	return gulp.src('dev/img/!(*.inline.svg)', {since: gulp.lastRun(min_img)})
+	return gulp.src('dev/img/!(*-bg.svg)', {since: gulp.lastRun(min_img)})
 		.pipe(newer('docs/img'))
 		.pipe(imgmin([
 			imgmin.gifsicle(),

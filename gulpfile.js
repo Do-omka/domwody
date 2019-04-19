@@ -56,6 +56,10 @@ function css() {
 			}),
 			require('postcss-svgo')(svgOptions),
 			require('postcss-focus'),
+			require('css-mqpacker')({
+				sort: true,
+			}),
+			require('postcss-mq-last'),
 		],
 		// {syntax: require('postcss-less')},
 		))
@@ -67,10 +71,6 @@ function min_css() {
 	return gulp.src('dev/css/*.css')
 		.pipe(postcss([
 			require('autoprefixer'),
-			require('css-mqpacker')({
-				sort: true,
-			}),
-			require('postcss-mq-last'),
 			require('postcss-csso')({
 				comments: false,
 			}),

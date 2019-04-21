@@ -1,6 +1,7 @@
 @import (optional) 'index/fonts';
 @import (optional) 'index/grid';
 @import (optional) 'index/reset';
+@import (optional) 'index/stripes';
 
 @red: #952426;
 
@@ -268,6 +269,19 @@ h4 {
 	margin-bottom: 26rem;
 }
 
+
+.section_white {
+	padding-top: 180rem;
+	color: #000;
+	background-color: #fff;
+}
+
+.section_black {
+	padding-top: 100rem;
+	color: #fff;
+	background-color: #000;
+}
+
 .main_left {
 	margin-right: 60rem;
 	
@@ -374,157 +388,163 @@ main.categories {
 	}
 }
 
-main.product {
-	
-	padding-top: 75rem;
-	
-	h2 {
-		max-width: unset;
+.main.product {
+	@media @xx {
+		background: svg-load('../img/sstripes1-bg.svg') no-repeat;
+		background-size: 100% 100%;
 	}
 	
-	> header {
-		display: flex;
-		margin-bottom: 50rem;
+	main {
+		padding-top: 75rem;
 		
-		.gallery {
-			display: flex;
-			max-height: 675rem;
-			margin-right: 36rem;
-			
-			.main {
-				max-width: 507rem;
-				margin-right: 20rem;
-				margin-bottom: 20rem;
-			}
-			
-			.previews {
-				max-width: 136rem;
-				overflow: hidden;
-				
-				> * {
-					margin-bottom: 18rem;
-				}
-			}
+		h2 {
+			max-width: unset;
 		}
 		
-		.rating {
-			font-size: 18rem;
-			font-weight: 500;
+		> header {
+			display: flex;
+			margin-bottom: 50rem;
 			
-			.current {
+			.gallery {
 				display: flex;
-				justify-content: space-between;
-				align-items: flex-start;
-				margin-bottom:  20rem;
-				.value {
-					padding: 4rem 12rem;
-					background-color: @red;
-					border-radius: 3px;
-					box-shadow: 0px 3px 15rem rgba(209, 0, 0, 0.5);
-					margin-left: 30rem;
+				max-height: 675rem;
+				margin-right: 36rem;
+				
+				.main {
+					max-width: 507rem;
+					margin-right: 20rem;
+					margin-bottom: 20rem;
+				}
+				
+				.previews {
+					max-width: 136rem;
+					overflow: hidden;
+					
+					> * {
+						margin-bottom: 18rem;
+					}
 				}
 			}
 			
-			.vote {
-				.c;
-				align-items: flex-end;
-				justify-content: flex-end;
+			.rating {
+				font-size: 18rem;
+				font-weight: 500;
 				
-				.amount {
-					margin-bottom: 40rem;
+				.current {
+					display: flex;
+					justify-content: space-between;
+					align-items: flex-start;
+					margin-bottom:  20rem;
+					.value {
+						padding: 4rem 12rem;
+						background-color: @red;
+						border-radius: 3px;
+						box-shadow: 0px 3px 15rem rgba(209, 0, 0, 0.5);
+						margin-left: 30rem;
+					}
+				}
+				
+				.vote {
+					.c;
+					align-items: flex-end;
+					justify-content: flex-end;
+					
+					.amount {
+						margin-bottom: 40rem;
+					}
+					
+					.stars {
+						margin-bottom: 4rem;
+						
+						.active-stars(@n) when (@n > 0) {
+							li:nth-child(@{n}) {
+								order: -@n;
+							}
+							.active-stars(@n - 1);
+						}
+						.active-stars(5);
+						
+						// &:hover {
+						// 	li {
+						// 		&:hover ~ li {
+						// 			background-image: svg-load('../img/star-bg.svg', fill=none, stroke=#fff);
+						// 		}
+						//
+						// 		cursor: pointer;
+						// 		background-image: svg-load('../img/star-bg.svg', fill=#fff, stroke=#fff);
+						// 	}
+						// }
+						
+						li {
+							cursor: pointer;
+							background-image: svg-load('../img/star-bg.svg', fill=none, stroke=#fff);
+							
+							&:hover,
+							&:hover ~ li {
+								background-image: svg-load('../img/star-bg.svg', fill=#fff, stroke=#fff);
+							}
+						}
+					}
 				}
 				
 				.stars {
-					margin-bottom: 4rem;
-				
+					display: flex;
+					margin: 0 -3rem 2rem;
+					
 					.active-stars(@n) when (@n > 0) {
-						li:nth-child(@{n}) {
-							order: -@n;
+						&[data-value='@{n}'] {
+							li:nth-child(-n + @{n}) {
+								background-image: svg-load('../img/star-bg.svg', fill=@red, stroke=@red);
+							}
 						}
 						.active-stars(@n - 1);
 					}
 					.active-stars(5);
-				
-					// &:hover {
-					// 	li {
-					// 		&:hover ~ li {
-					// 			background-image: svg-load('../img/star-bg.svg', fill=none, stroke=#fff);
-					// 		}
-					//
-					// 		cursor: pointer;
-					// 		background-image: svg-load('../img/star-bg.svg', fill=#fff, stroke=#fff);
-					// 	}
-					// }
 					
 					li {
-						cursor: pointer;
-						background-image: svg-load('../img/star-bg.svg', fill=none, stroke=#fff);
-						
-						&:hover,
-						&:hover ~ li {
-							background-image: svg-load('../img/star-bg.svg', fill=#fff, stroke=#fff);
-						}
+						width: 30rem;
+						height: 30rem;
+						margin: 0 3rem;
+						background-image: svg-load('../img/star-bg.svg', fill=none, stroke=@red);
+						background-size: 100% 100%;
 					}
 				}
 			}
+		}
+		
+		.characteristics {
+			display: table;
+			border-spacing: 20rem;
+			margin: 0 -20rem 50rem;
+			// margin-left: -20rem;
 			
-			.stars {
-				display: flex;
-				margin: 0 -3rem 2rem;
+			li {
+				display: table-row;
 				
-				.active-stars(@n) when (@n > 0) {
-					&[data-value='@{n}'] {
-						li:nth-child(-n + @{n}) {
-							background-image: svg-load('../img/star-bg.svg', fill=@red, stroke=@red);
-						}
-					}
-					.active-stars(@n - 1);
+				> * {
+					display: table-cell;
 				}
-				.active-stars(5);
+			}
+		}
+		
+		.special {
+			li {
+				display: flex;
+				margin-bottom: 3em;
 				
-				li {
-					width: 30rem;
-					height: 30rem;
-					margin: 0 3rem;
-					background-image: svg-load('../img/star-bg.svg', fill=none, stroke=@red);
+				&:last-child {
+					margin-bottom: 0;
+				}
+				
+				&::before {
+					content: '';
+					width: 60rem;
+					height: 60rem;
+					margin-right: 40rem;
+					flex-shrink: 0;
+					background: svg-load('../img/i-bg.svg');
 					background-size: 100% 100%;
 				}
-			}
-		}
-	}
-	
-	.characteristics {
-		display: table;
-		border-spacing: 20rem;
-		margin: 0 -20rem 50rem;
-		// margin-left: -20rem;
-		
-		li {
-			display: table-row;
-			
-			> * {
-				display: table-cell;
-			}
-		}
-	}
-	
-	.special {
-		li {
-			display: flex;
-			margin-bottom: 3em;
-			
-			&:last-child {
-				margin-bottom: 0;
-			}
-			
-			&::before {
-				content: '';
-				width: 60rem;
-				height: 60rem;
-				margin-right: 40rem;
-				flex-shrink: 0;
-				background: svg-load('../img/i-bg.svg');
-				background-size: 100% 100%;
 			}
 		}
 	}
@@ -625,7 +645,7 @@ section.product_set {
 		width: 926rem;
 		// height: 500rem;
 		padding-right: 0;
-		background: svg-load('../img/group.svg') no-repeat;
+		background: svg-load('../img/cards-bg.svg') no-repeat;
 		background-size: 100% 100%;
 		margin-left: auto;
 	}
@@ -638,97 +658,6 @@ section.product_set {
 		max-width: 53%;
 		align-items: center;
 		transform: rotate(-12.17deg);
-
-	}
-}
-
-.section_white {
-	padding-top: 180rem;
-	color: #000;
-	background-color: #fff;
-	
-	+ * {
-		padding-top: 0 !important;
 		
-		&::before {
-			content: '';
-			height: 270rem;
-			background: svg-load('../img/white_bottom-bg.svg') no-repeat;
-			background-size: 100% 100%;
-			filter: drop-shadow(0 50rem 50rem rgba(226, 226, 226, 0.1));
-			margin-top: -1px;
-			margin-bottom: 50rem;
-		}
-	}
-}
-
-.section_black {
-	padding-top: 100rem;
-	color: #fff;
-	background-color: #000;
-	
-	+ * {
-		padding-top: 0 !important;
-		
-		&::before {
-			content: '';
-			height: 226rem;
-			background: svg-load('../img/black_bottom-bg.svg') no-repeat;
-			background-size: 100% 100%;
-			margin-top: -1px;
-			margin-bottom: 1em;
-		}
-	}
-}
-
-.stripes1 {
-	+ * {
-		padding-top: 0 !important;
-		
-		&::before {
-			content: '';
-			height: 400rem;
-			background: svg-load('../img/stripes1-bg.svg') no-repeat;
-			background-size: 100% 100%;
-			margin-top: -1px;
-			margin-bottom: -200rem;
-			
-			@media @xl {
-				height: 600rem;
-				margin-bottom: -400rem;
-			}
-		}
-	}
-}
-
-.stripes2 {
-	+ * {
-		padding-top: 0 !important;
-		
-		&::before {
-			content: '';
-			height: 408rem;
-			background: svg-load('../img/stripes2-bg.svg') no-repeat;
-			background-size: 100% 100%;
-			margin-top: -1px;
-			margin-bottom: -80rem;
-		}
-	}
-}
-
-.stripes3 {
-	z-index: 0;
-	
-	+ * {
-		padding-top: 0 !important;
-		z-index: 1;
-		
-		&::before {
-			content: '';
-			height: 300rem;
-			background: svg-load('../img/stripes3-bg.svg') no-repeat;
-			background-size: 100% 100%;
-			margin-top: -1px;
-		}
 	}
 }

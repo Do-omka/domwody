@@ -4,6 +4,26 @@
 
 @red: #952426;
 
+.container {
+	--cw: none;
+	
+	@media @sm {
+		--cw: 540px;
+	}
+	@media @md {
+		--cw: 720px;
+	}
+	@media @lg {
+		--cw: 960px;
+	}
+	@media @xl {
+		--cw: 1140px;
+	}
+	@media @xx {
+		--cw: 1650px;
+	}
+}
+
 html {
 	max-width: 1920px;
 	margin-left: auto;
@@ -144,6 +164,21 @@ body > footer {
 	}
 }
 
+.ol {
+	counter-reset: i;
+	li::before {
+		counter-increment: i;
+		content: counter(i) '.\00a0';
+	}
+}
+
+ol {
+	.ol;
+	li {
+		display: flex;
+	}
+}
+
 .logo {
 	filter: drop-shadow(5rem 5rem 5rem #222);
 }
@@ -179,9 +214,40 @@ p {
 	}
 }
 
+.btn2 {
+	display: flex;
+	align-items: center;
+	width: 410rem;
+	padding: 7rem 17rem;
+	font-weight: 500;
+	background: linear-gradient(79.31deg, #6A1819 4.57%, #952426 93.44%);
+	box-shadow: 0 15rem 50rem #6A1819;
+	border-radius: 100rem;
+	margin-bottom: 42rem;
+	
+	.icon {
+		margin-right: 17rem;
+		width: 86rem;
+		height: 86rem;
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		
+		&.call {
+			background-image: url(../img/icall.png);
+		}
+		&.reply {
+			background-image: url(../img/ireply.png);
+		}
+	}
+}
+
 .recall {
 	color: rgb(255, 145, 146);
 	border-bottom: 2px dashed rgb(255, 145, 146);;
+}
+
+p {
+	margin-bottom: 2em;
 }
 
 h2 {
@@ -194,7 +260,7 @@ h2 {
 
 h3 {
 	font-size: 36rem;
-	margin-bottom: 30rem;
+	margin-bottom: 34rem;
 }
 
 h4 {
@@ -443,7 +509,6 @@ main.product {
 	}
 	
 	.special {
-		
 		li {
 			display: flex;
 			margin-bottom: 3em;
@@ -459,7 +524,7 @@ main.product {
 				margin-right: 40rem;
 				flex-shrink: 0;
 				background: svg-load('../img/i-bg.svg');
-				background-size: 100%;
+				background-size: 100% 100%;
 			}
 		}
 	}
@@ -494,9 +559,10 @@ section.probably_interesting {
 			position: absolute;
 			top: 170rem;
 			right: 0;
-			width: 668rem;
+			width: 288rem;
 			height: 232rem;
-			background: svg-load('../img/sstripes1-bg.svg') no-repeat 100% 100%;
+			background: svg-load('../img/sstripes2-bg.svg') no-repeat;
+			background-size: 100% 100%;
 		}
 	}
 	
@@ -526,8 +592,54 @@ section.probably_interesting {
 	}
 }
 
-section.related {
-	// margin-bottom: -58rem;
+section.product_details {
+	
+	ul {
+		li {
+			margin-bottom: 88rem;
+		}
+	}
+	
+	.buttons {
+		justify-content: center;
+		align-items: center;
+	}
+	
+	.warning {
+		font-weight: 500;
+	}
+}
+
+section.product_set {
+	position: relative;
+	z-index: 0;
+	
+	.container {
+		margin-right: 0;
+		max-width: calc(100% - (100% - var(--cw)) / 2);
+	}
+	
+	.cards {
+		.c;
+		justify-content: center;
+		width: 926rem;
+		// height: 500rem;
+		padding-right: 0;
+		background: svg-load('../img/group.svg') no-repeat;
+		background-size: 100% 100%;
+		margin-left: auto;
+	}
+	
+	ol {
+		margin-bottom: 50rem;
+	}
+	
+	.img {
+		max-width: 53%;
+		align-items: center;
+		transform: rotate(-12.17deg);
+
+	}
 }
 
 .section_white {
@@ -561,9 +673,10 @@ section.related {
 		&::before {
 			content: '';
 			height: 226rem;
-			background: svg-load('../img/stripes3-bg.svg') no-repeat;
+			background: svg-load('../img/black_bottom-bg.svg') no-repeat;
 			background-size: 100% 100%;
 			margin-top: -1px;
+			margin-bottom: 1em;
 		}
 	}
 }
@@ -604,5 +717,18 @@ section.related {
 }
 
 .stripes3 {
+	z-index: 0;
 	
+	+ * {
+		padding-top: 0 !important;
+		z-index: 1;
+		
+		&::before {
+			content: '';
+			height: 300rem;
+			background: svg-load('../img/stripes3-bg.svg') no-repeat;
+			background-size: 100% 100%;
+			margin-top: -1px;
+		}
+	}
 }

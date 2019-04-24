@@ -791,6 +791,7 @@ section.product_set {
 	
 	.control_unit-1 {
 		padding: 0;
+		z-index: 1;
 		
 		.img {
 			padding: 10%;
@@ -802,29 +803,13 @@ section.product_set {
 }
 
 .control_unit {
-	z-index: 1;
-	
 	img {
 		filter: drop-shadow(0 0 150rem #090909);
 	}
 }
 
 .control_unit-2 {
-	position: relative;
-	background: none;
 	z-index: 0;
-	margin-bottom: -110rem;
-	
-	&::after {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 110rem;
-		background: #000;
-		z-index: -1;
-	}
 	
 	.img {
 		padding-left: 32%;
@@ -832,6 +817,7 @@ section.product_set {
 		padding-bottom: 4%;
 		background: svg-load('../img/cu2-bg.svg') no-repeat bottom;
 		background-size: 100%;
+		margin-bottom: -110rem;
 		
 		@media @md {
 			margin-top: -20%;

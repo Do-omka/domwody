@@ -22,8 +22,13 @@
 		--cw: 1140px;
 	}
 	@media @xx {
-		--cw: 1650px;
+		--cw: 1600px;
 	}
+}
+
+.container-right {
+	margin-right: 0;
+	max-width: calc(100% - (100% - var(--cw)) / 2);
 }
 
 html {
@@ -641,8 +646,7 @@ section.product_set {
 	z-index: 0;
 	
 	.container {
-		margin-right: 0;
-		max-width: calc(100% - (100% - var(--cw)) / 2);
+		.container-right;
 	}
 	
 	.cards {
@@ -774,8 +778,7 @@ section.product_set {
 	align-items: flex-start;
 	
 	.container {
-		margin-right: 0;
-		max-width: calc(100% - (100% - var(--cw)) / 2);
+		.container-right;
 	}
 	
 	.text {

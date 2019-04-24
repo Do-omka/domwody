@@ -37,6 +37,25 @@
 	}
 }
 
+.section_palered {
+	+ * {
+		padding-top: 0 !important;
+		
+		&::before {
+			content: '';
+			height: 122rem;
+			background: svg-load('../img/palered_bottom-bg.svg') no-repeat;
+			background-size: 100% 100%;
+			margin-top: -1px;
+			margin-bottom: 1em;
+			
+			@media @sm {
+				height: 224rem;
+			}
+		}
+	}
+}
+
 .stripes {
 	+ * {
 		padding-top: 0 !important;

@@ -4,6 +4,7 @@
 @import (optional) 'index/stripes';
 
 @red: #952426;
+@palered: #6A1819;
 
 .container {
 	--cw: none;
@@ -222,8 +223,8 @@ p {
 	width: 410rem;
 	padding: 7rem 17rem;
 	font-weight: 500;
-	background: linear-gradient(79.31deg, #6A1819 4.57%, #952426 93.44%);
-	box-shadow: 0 15rem 50rem #6A1819;
+	background: linear-gradient(79.31deg, @palered 4.57%, @red 93.44%);
+	box-shadow: 0 15rem 50rem @palered;
 	border-radius: 100rem;
 	margin-bottom: 42rem;
 	
@@ -398,7 +399,7 @@ h4 {
 		
 		.img {
 			max-width: 230rem;
-			filter: drop-shadow(0px 4px 50rem #6A1819);
+			filter: drop-shadow(0px 4px 50rem @palered);
 			margin-bottom: 14rem;
 		}
 		
@@ -707,7 +708,7 @@ section.product_set {
 			color: #E2E2E2;
 			font-size: 16rem;
 			line-height: 1.3;
-			background: linear-gradient(220.42deg, #8B2423 5.55%, #6A1819 99.34%);
+			background: linear-gradient(220.42deg, #8B2423 5.55%, @palered 99.34%);
 			box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.1);
 			border-radius: 15px;
 			overflow: hidden;
@@ -743,7 +744,7 @@ section.product_set {
 				
 				.btn {
 					width: 100%;
-					background: linear-gradient(191.24deg, #D10000 13.28%, #6A1819 84.99%);
+					background: linear-gradient(191.24deg, #D10000 13.28%, @palered 84.99%);
 					margin-left: auto;
 					margin-right: auto;
 					
@@ -765,8 +766,8 @@ section.product_set {
 	}
 }
 
-.product_chassis {
-	background-color: #6A1819;
+.section_palered {
+	background-color: @palered;
 }
 
 .control_units {
@@ -785,18 +786,52 @@ section.product_set {
 		margin-bottom: 100rem;
 	}
 	
-	.img {
+	.control_unit-1 {
 		padding: 0;
 		
-		img {
-			filter: drop-shadow(0 0 150rem #090909);
+		.img {
+			padding: 10%;
+			padding-right: 21.2%;
+			background: svg-load('../img/cu1-bg.svg') no-repeat;
+			background-size: 100% 100%;
 		}
 	}
+}
+
+.control_unit {
+	z-index: 1;
 	
-	.img1 {
-		padding: 10%;
-		padding-right: 21.2%;
-		background: svg-load('../img/cu1-bg.svg') no-repeat;
-		background-size: 100% 100%;
+	img {
+		filter: drop-shadow(0 0 150rem #090909);
+	}
+}
+
+.control_unit-2 {
+	position: relative;
+	background: none;
+	z-index: 0;
+	margin-bottom: -110rem;
+	
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 110rem;
+		background: #000;
+		z-index: -1;
+	}
+	
+	.img {
+		padding-left: 32%;
+		padding-right: 32%;
+		padding-bottom: 4%;
+		background: svg-load('../img/cu2-bg.svg') no-repeat bottom;
+		background-size: 100%;
+		
+		@media @md {
+			margin-top: -20%;
+		}
 	}
 }

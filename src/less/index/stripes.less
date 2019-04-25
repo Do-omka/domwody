@@ -158,13 +158,31 @@
 		
 		&::before {
 			content: '';
-			height: 120rem;
+			height: 110rem;
 			background: svg-load('../img/stripes5-bg.svg') no-repeat;
 			background-size: 100% 100%;
 			margin-top: -1px;
 			
 			@media @sm {
 				height: 220rem;
+			}
+		}
+	}
+}
+
+.stripes6 {
+	+ * {
+		padding-top: 0 !important;
+		
+		&::before {
+			content: '';
+			height: 122rem;
+			background: svg-load('../img/stripes6-bg.svg') no-repeat;
+			background-size: 100% 100%;
+			margin-top: -1px;
+			
+			@media @sm {
+				height: 246rem;
 			}
 		}
 	}

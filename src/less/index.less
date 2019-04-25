@@ -68,17 +68,20 @@ body > header {
 	
 	.header {
 		border-bottom: 1px solid rgb(159, 2, 1);
-		padding: 20rem 0;
+		padding-top: 20rem;
 		
-		.container {
-			.r;
+		&-content {
+			.row;
 			justify-content: space-between;
 			align-items: center;
-			
-			> :not(:last-child):not(:first-child) {
-				margin-right: 15px;
-				margin-left: 15px;
-			}
+		}
+		
+		&-item {
+			.col-auto;
+			flex-shrink: 1;
+			// margin-left: 15px;
+			// margin-right: 15px;
+			margin-bottom: 20rem;
 			
 			.logo {
 				max-width: 170rem;
@@ -89,10 +92,98 @@ body > header {
 			}
 			
 			.tel {
-				.c;
+				.r;
+				align-items: center;
 				
-				> * {
-					margin-bottom: .25em;
+				&::before {
+					content: '';
+					width: 50rem;
+					height: 50rem;
+					background: svg-load('../img/tel-bg.svg') no-repeat;
+					background-size: 100% 100%;
+					filter: drop-shadow(0 10rem 50rem #C51413);
+					margin-right: 20rem;
+				}
+				
+				&-content {
+					.c;
+					
+					b {
+						color: inherit;
+					}
+					
+					> a {
+						margin-bottom: .25em;
+					}
+				}
+			}
+			
+			.review {
+				.r;
+				align-items: center;
+				font-weight: 500;
+				
+				&::before {
+					content: '';
+					width: 50rem;
+					height: 50rem;
+					background: svg-load('../img/review-bg.svg') no-repeat;
+					background-size: 100% 100%;
+					filter: drop-shadow(0 10rem 50rem #C51413);
+					margin-right: 20rem;
+				}
+			}
+			
+			form.search {
+				.r;
+				flex-wrap: nowrap;
+				cursor: text;
+				color: #9F0201;
+				font-size: 16rem;
+				font-weight: 500;
+				padding: 13px 20rem 13px 30rem;
+				border: 2px solid currentColor;
+				border-radius: 30px;
+				max-width: 100%;
+				
+				input {
+					width: 100%;
+					min-width: 0;
+				}
+				
+				button.search {
+					content: '';
+					flex-shrink: 0;
+					width: 18rem;
+					height: 18rem;
+					background: svg-load('../img/search-bg.svg') no-repeat;
+					background-size: 100% 100%;
+					margin-left: 10rem;
+				}
+			}
+			
+			.basket {
+				position: relative;
+				font-size: 0;
+				width: 80rem;
+				height: 74rem;
+				background: svg-load('../img/basket-bg.svg') no-repeat;
+				background-size: 100% 100%;
+				filter: drop-shadow(0 10rem 50rem #C51413);
+				
+				.size {
+					position: absolute;
+					width: 32rem;
+					height: 32rem;
+					bottom: 0;
+					right: 0;
+					color: #000;
+					font-size: 16rem;
+					font-weight: 700;
+					text-align: center;
+					background-color: #fff;
+					border: 5px solid #000;
+					border-radius: 50%;
 				}
 			}
 		}
@@ -100,13 +191,17 @@ body > header {
 	
 	nav {
 		ul {
-			.r;
+			.row;
 			justify-content: center;
 		}
 		
 		a {
-			padding: 20rem 30rem;
+			padding: 15rem 15rem;
 			border-bottom: 4px solid transparent;
+			
+			@media @xx {
+				padding: 20rem 45rem;
+			}
 			
 			&:hover {
 				border-color: rgb(159, 2, 1);

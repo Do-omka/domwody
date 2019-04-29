@@ -26,7 +26,27 @@
 
 .container {
 	@media @xx {
-		max-width: 1600px;
+		max-width: 1620px;
+	}
+}
+
+.container {
+	--cw: none;
+	
+	@media @sm {
+		--cw: 540px;
+	}
+	@media @md {
+		--cw: 720px;
+	}
+	@media @lg {
+		--cw: 960px;
+	}
+	@media @xl {
+		--cw: 1140px;
+	}
+	@media @xx {
+		--cw: 1620px;
 	}
 }
 

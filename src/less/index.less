@@ -182,12 +182,12 @@ body > header {
 }
 
 body > footer {
-	// padding-top: 484rem;
-	padding-top: 50rem;
-	font-size: 18rem;
-	background-color: #000;
-	background: #000 url(../img/footer.png) bottom no-repeat;
-	background-size: cover;
+	
+	.container {
+		font-size: 18rem;
+		background: #000 url(../img/footer.png) bottom no-repeat;
+		background-size: cover;
+	}
 	
 	.footer .row {
 		justify-content: center;
@@ -386,9 +386,10 @@ h4 {
 }
 
 .section_white {
-	padding-top: 180rem;
-	color: #000;
-	background-color: #fff;
+	.container {
+		color: #000;
+		background-color: #fff;
+	}
 }
 
 .section_black {
@@ -628,8 +629,11 @@ main.categories {
 }
 
 section.clients {
-	background: #fff url(../img/white.png) no-repeat center;
-	background-size: 100% auto;
+	
+	.container {
+		background: #fff url(../img/white.png) no-repeat center;
+		background-size: 100% auto;
+	}
 	
 	h2 {
 		font-size: 32rem;
@@ -1012,12 +1016,10 @@ section.product_set {
 }
 
 .infoblock {
-	background: url(../img/infoblock.png);
-	background-size: 100% 100%;
 	
-	ul {
-		margin-top: -20rem;
-		margin-bottom: -20rem;
+	.container {
+		background: url(../img/infoblock.png);
+		background-size: 100% 100%;
 	}
 	
 	.card {
@@ -1077,6 +1079,8 @@ section.product_set {
 }
 
 .reviews {
+	.c;
+	
 	.butt {
 		margin-bottom: -40rem;
 		z-index: 10;
@@ -1138,8 +1142,11 @@ section.product_set {
 }
 
 .popular\&reviews {
-	background: url(../img/popular&reviews.png) no-repeat center;
-	background-size: 100% auto;
+	
+	.container {
+		background: #222 url(../img/popular&reviews.png) no-repeat center;
+		background-size: 100% auto;
+	}
 	
 	.other_products {
 		&::after {

@@ -6,6 +6,10 @@
 @red: #952426;
 @palered: #6A1819;
 
+.container {
+	.c;
+}
+
 .container-right {
 	margin-right: 0;
 	max-width: calc(100% - (100% - var(--cw)) / 2);
@@ -38,17 +42,22 @@ body {
 	color: #fff;
 	font-size: 20rem;
 	line-height: 1.25;
-	font-family: Roboto;
+	font-family: Calibri;
 	background-color: #000;
+	background: #000 url(../img/bg.jpg) no-repeat top center;
+	background-size: 100% auto;
 }
 
 body > header {
-	background-color: #000;
 	font-size: 18rem;
 	
-	.header {
-		border-bottom: 1px solid rgb(159, 2, 1);
+	.container {
 		padding-top: 20rem;
+		background-color: #000;
+		border-bottom: 1px solid rgb(159, 2, 1);
+	}
+	
+	.header {
 		
 		&-content {
 			.row;
@@ -393,7 +402,9 @@ h4 {
 }
 
 .section_black {
-	background-color: #000;
+	.container {
+		background-color: #000;
+	}
 }
 
 .main_left {
@@ -775,8 +786,8 @@ section.product_set {
 		display: flex;
 		
 		> button {
-			width: 46rem;
-			height: 46rem;
+			width: 40rem;
+			height: 40rem;
 			padding: 14rem;
 			border-radius: 5rem;
 			background: #fff svg-load('../img/arrow-bg.svg') no-repeat;
@@ -820,8 +831,8 @@ section.product_set {
 				padding: 0 108rem 222rem 28rem;
 				
 				.img {
-					width: 106rem;
-					height: 330rem;
+					width: 106rem * .9;
+					height: 330rem * .9;
 					position: absolute;
 					bottom: 0;
 					right: 70rem;
@@ -1023,7 +1034,7 @@ section.product_set {
 	}
 	
 	.card {
-		@img: 220rem;
+		@img: 200rem;
 		display: flex;
 		position: relative;
 		margin-top: 20rem;
@@ -1054,7 +1065,7 @@ section.product_set {
 			h4 {
 				font-size: 22rem;
 				font-weight: 700;
-				margin-bottom: 32rem;
+				margin-bottom: 0;
 				display: inline;
 			}
 			
@@ -1068,8 +1079,8 @@ section.product_set {
 				
 				&::after {
 					content: '';
-					width: 50rem;
-					height: 50rem;
+					width: 40rem;
+					height: 40rem;
 					background: svg-load('../img/arrow-icon-bg.svg') no-repeat;
 					background-size: 100% 100%;
 				}

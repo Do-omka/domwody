@@ -72,6 +72,8 @@ function min_css() {
 		.pipe(postcss([
 			require('autoprefixer'),
 			require('postcss-csso')({
+				restructure: false,
+				debug: true,
 				comments: false,
 			}),
 		]))

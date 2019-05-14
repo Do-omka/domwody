@@ -16,9 +16,9 @@
 }
 
 html {
-	max-width: 1920px;
-	margin-left: auto;
-	margin-right: auto;
+	// max-width: 1920px;
+	// margin-left: auto;
+	// margin-right: auto;
 	font-size: .55px;
 	
 	@media @sm {
@@ -48,7 +48,7 @@ html {
 
 body {
 	.default;
-	background: #000 url(../img/bg.jpg) no-repeat top center;
+	background: #000 url(../img/bg-bg.png) no-repeat center fixed;
 	background-size: 100% auto;
 }
 
@@ -186,8 +186,9 @@ body > header {
 		
 		a {
 			padding: 15rem 15rem;
+			font-size: 20rem;
+			text-transform: uppercase;
 			border-bottom: 4px solid transparent;
-			
 			&:hover {
 				border-color: rgb(159, 2, 1);
 			}
@@ -375,7 +376,7 @@ ul.special {
 
 .recall {
 	color: rgb(255, 145, 146);
-	border-bottom: 2px dashed rgb(255, 145, 146);;
+	// border-bottom: 2px dashed currentColor;
 }
 
 h2 {

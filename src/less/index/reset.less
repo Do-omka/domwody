@@ -25,6 +25,12 @@
 }
 
 .container {
+	
+	@media @sm {
+		padding-left: 30rem;
+		padding-right: 30rem;
+	}
+	
 	@media @xx {
 		max-width: 1140px;
 	}
@@ -46,7 +52,7 @@
 		--cw: 1140px;
 	}
 	@media @xx {
-		--cw: 1620px;
+		--cw: 1140px;
 	}
 }
 
@@ -68,6 +74,7 @@
 
 .r {
 	display: flex;
+	flex-direction: row;
 	flex-wrap: wrap;
 }
 
@@ -147,7 +154,7 @@ table {
 	}
 	
 	colgroup {
-		display: table-table-column-group;
+		display: table-column-group;
 	}
 	
 	col {

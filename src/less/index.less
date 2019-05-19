@@ -810,8 +810,17 @@ section.product_set {
 }
 
 .other_products {
-	
 	.slider {
+		.slides {
+			margin-left: -2px;
+			margin-right: -2px;
+			
+			> * {
+				padding-left: 2px;
+				padding-right: 2px;
+			}
+		}
+		
 		.slide {
 			color: #E2E2E2;
 			font-size: 16rem;
@@ -1038,6 +1047,16 @@ section.product_set {
 
 .infoblock {
 	
+	.row {
+		margin-left: -2px;
+		margin-right: -2px;
+		
+		> * {
+			padding-left: 2px;
+			padding-right: 2px;
+		}
+	}
+	
 	&1 {
 		.container {
 			background: url(../img/infoblock.png);
@@ -1052,7 +1071,7 @@ section.product_set {
 	&2 {
 		.card {
 			header {
-				.r;
+				display: flex;
 				justify-content: space-between;
 				align-items: center;
 				margin-bottom: 1em;
@@ -1061,6 +1080,7 @@ section.product_set {
 					content: '';
 					width: 20rem;
 					height: 20rem;
+					flex-shrink: 0;
 					background: svg-load('../img/red-arrow-bg.svg') no-repeat center;
 					background-size: 100% 100%;
 				}
@@ -1161,6 +1181,16 @@ section.product_set {
 	
 	.slider {
 		margin-bottom: 76rem;
+		
+		.slides {
+			margin-left: -2px;
+			margin-right: -2px;
+			
+			> * {
+				padding-left: 2px;
+				padding-right: 2px;
+			}
+		}
 		
 		.slide {
 			font-size: 18rem;

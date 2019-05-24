@@ -13,7 +13,7 @@
 <body>
 	//= tpl/header.html
 	
-	<div class='main product stripes2'>
+	<section class='main product stripes2'>
 		<div class='container'>
 			<aside class='main_left'>
 				//= tpl/aside_categories.html
@@ -26,10 +26,10 @@
 				
 				<header>
 					<div class='gallery'>
-						<div class='main'>
+						<div class='gallery_main'>
 							<img src='img/product1.png' alt='Фото товара' />
 						</div>
-						<div class='previews'>
+						<div class='gallery_previews'>
 							<img src='img/product2.png' alt='Фото товара' />
 							<img src='img/product3.png' alt='Фото товара' />
 						</div>
@@ -86,7 +86,7 @@
 				</ul>
 			</main>
 		</div>
-	</div>
+	</section>
 	
 	//= tpl/az.html
 	//= tpl/probably_interesting.html
@@ -94,7 +94,9 @@
 	//= tpl/product_details.html
 	//= tpl/product_set.html
 	<section class='other_products stripes'>
-		//= tpl/other_products.html
+		<div class='container'>
+			//= tpl/other_products.html
+		</div>
 	</section>
 	//= tpl/related.html
 	//= tpl/clients.html

@@ -10,4 +10,39 @@
 
 document.addEventListener('DOMContentLoaded', (e)=> {
 	
+	if (document.querySelector('.other_products-slider')) {
+		let swiper = new Swiper('.other_products-slider', {
+			slidesPerView: 'auto',
+			simulateTouch: false,
+			// autoHeight: true,
+			navigation: {
+			  nextEl: '.other_products-slider .controls .next',
+			  prevEl: '.other_products-slider .controls .prev',
+			},
+			keyboard: {
+				enabled: true,
+				onlyInViewport: true,
+			},
+		})
+	}
+	
+	if (document.querySelector('.reviews .slider')) {
+		let swiper = new Swiper('.reviews .slider', {
+			slidesPerView: 'auto',
+			simulateTouch: false,
+			watchSlidesProgress: true,
+			watchSlidesVisibility: true,
+			// spaceBetween: 0,
+			// autoHeight: true,
+			navigation: {
+			  nextEl: '.reviews .slider .controls .next',
+			  prevEl: '.reviews .slider .controls .prev',
+			},
+			keyboard: {
+				enabled: true,
+				onlyInViewport: true,
+			},
+		})
+	}
+	
 })

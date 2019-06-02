@@ -861,10 +861,13 @@ section.product_set {
 }
 
 .other_products {
-	.slider {
+	&-slider {
+		margin-left: -2px;
+		margin-right: -2px;
+		
 		.slides {
-			margin-left: -2px;
-			margin-right: -2px;
+			margin-left: 0;
+			margin-right: 0;
 			
 			> * {
 				padding-left: 2px;
@@ -1245,10 +1248,12 @@ section.product_set {
 	
 	.slider {
 		margin-bottom: 76rem;
+		margin-left: -2px;
+		margin-right: -2px;
 		
 		.slides {
-			margin-left: -2px;
-			margin-right: -2px;
+			margin-left: 0;
+			margin-right: 0;
 			
 			> * {
 				padding-left: 2px;
@@ -1307,15 +1312,21 @@ section.product_set {
 		background-size: 100% auto;
 	}
 	
-	.other_products {
-		&::after {
+	.reviews {
+		&::before {
 			content: '';
 			width: 122rem;
 			height: 80rem;
 			background: svg-load('../img/sstripes3-bg.svg') no-repeat;
 			background-size: 100% 100%;
 			filter: drop-shadow(0 0 50rem rgba(197, 20, 19, 0.3));
+			margin-top: 10rem;
 			margin-bottom: 10rem;
+			margin-left: -15px;
+			
+			@media @sm {
+				margin-left: -30rem;
+			}
 		}
 	}
 }

@@ -5,6 +5,8 @@ const
 	sourcemaps = require('gulp-sourcemaps'),
 	postcss = require('gulp-postcss'),
 	less = require('gulp-less'),
+	less_changed = require('gulp-less-changed'),
+	rename = require('rename'),
 	imgmin = require('gulp-imagemin'),
 	htmlmin = require('gulp-htmlmin'),
 	jsmin = require('gulp-uglify'),
@@ -43,6 +45,12 @@ function min_html() {
 
 function css() {
 	return gulp.src('src/less/*.less')
+	.pipe(less_changed({
+			getOutputFileName: file => rename(file, {
+				dirname: 'dev/css',
+				extname: '.css',
+			})
+		}))
 		.pipe(sourcemaps.init({
 			loadMaps: true,
 			largeFile: true,
@@ -136,6 +144,7 @@ function watch_js() {
 function refresh() {
 	bs.init({
 		server: 'dev',
+		browser: 'chrome',
 	})
 	bs.watch('dev').on('change', bs.reload)
 }

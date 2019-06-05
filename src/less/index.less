@@ -786,7 +786,12 @@ main.categories {
 		
 		> header {
 			display: flex;
+			flex-direction: column;
 			margin-bottom: 50rem;
+			
+			@media @lg {
+				flex-direction: row;
+			}
 			
 			.gallery {
 				display: flex;
@@ -810,20 +815,27 @@ main.categories {
 			}
 			
 			.rating {
+				display: flex;
+				flex-direction: column;
+				// align-items: flex-start;
 				font-size: 18rem;
 				font-weight: 500;
 				
 				.current {
 					display: flex;
-					justify-content: space-between;
 					align-items: flex-start;
+					justify-content: flex-end;
 					margin-bottom:  20rem;
+					
+					@media @xl {
+						
+					}
 					.value {
 						padding: 4rem 12rem;
 						background-color: @red;
 						border-radius: 3px;
 						box-shadow: 0px 3px 15rem rgba(209, 0, 0, 0.5);
-						margin-left: 30rem;
+						margin-right: 30rem;
 					}
 				}
 				

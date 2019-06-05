@@ -278,11 +278,6 @@ ol {
 	filter: drop-shadow(5rem 5rem 5rem #222);
 }
 
-.main .container {
-	display: flex;
-	flex-direction: row;
-}
-
 b {
 	color: @red;
 	font-weight: 700;
@@ -455,8 +450,58 @@ section,
 	}
 }
 
+.main-content {
+	display: flex;
+	flex-direction: row;
+	// overflow: hidden;
+	
+	> * {
+	}
+}
+
+.main .container {
+	overflow: hidden;
+}
+
 .main_left {
+	align-self: flex-start;
+	flex-shrink: 0;
+	position: relative;
+	transition: .2s ease all;
+	// align-items: flex-end;
+	width: 15px;
 	margin-right: 60rem;
+	z-index: 1;
+	
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: -50px;
+		background: rgb(151, 36, 38);
+		z-index: 1;
+		border-bottom-right-radius: 15px;
+	}
+	
+	&.active {
+		width: auto;
+		transform: none;
+		
+		&::after {
+			content: none;
+		}
+	}
+	
+	@media @md {
+		width: auto;
+		transform: none;
+		
+		&::after {
+			content: none;
+		}
+	}
 	
 	h2 {
 		font-size: 28rem;
@@ -469,6 +514,7 @@ section,
 .aside_categories {
 	// position: relative;
 	margin-left: -15px;
+	overflow: hidden;
 	
 	@media @sm {
 		margin-left: -30rem;
@@ -488,9 +534,10 @@ section,
 		content: '';
 		// position: absolute;
 		bottom: 0;
-		width: 100%;
+		width: calc(100% + 2px);
 		height: 184rem;
-		background: svg-load('../img/aside_categories-bottom-bg.svg') no-repeat center / 100% 100%;
+		background: svg-load('../img/aside_categories-bottom-bg.svg') no-repeat top right / contain;
+		margin-top: -1px;
 	}
 	
 	.categories {
@@ -501,6 +548,7 @@ section,
 		&-item {
 			display: flex;
 			justify-content: space-between;
+			align-items: center;
 			
 			&.active {
 				.expand {
@@ -521,17 +569,20 @@ section,
 	}
 	
 	.expand {
+		flex-shrink: 0;
 		width: 14rem;
 		height: 14rem;
 		background: svg-load('../img/expand_arrow-bg.svg',  stroke='#fff') no-repeat center / 100%;
 		transition: .2s ease all;
 		transform: rotate(-90deg);
+		margin-left: 5px;
 	}
 }
 
 .aside_filter {
 	.c;
 	// padding-left: 150rem;
+	overflow: hidden;
 	
 	.btn {
 		align-self: center;
@@ -613,11 +664,13 @@ section,
 			}
 			
 			.expand {
+				flex-shrink: 0;
 				width: 18rem;
 				height: 18rem;
 				background: svg-load('../img/expand_arrow-bg.svg') no-repeat center / 100%;
 				transition: .2s ease all;
 				transform: rotate(-90deg);
+				margin-left: 5px;
 			}
 		}
 		

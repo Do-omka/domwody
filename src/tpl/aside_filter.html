@@ -2,22 +2,32 @@
 	<h2>
 		Фильтр товаров
 	</h2>
-	<div class='fieldset'>
-		<div class='legend'>
+	<div class='fieldset active'>
+		<button type='button' class='legend' onclick="this.parentNode.classList.toggle('active')">
 			<h3>
-				Цена(руб.)
+				Цена (руб.)
 			</h3>
-			<button type='button'>></button>
-		</div>
+			<i class='expand'></i>
+		</button>
 		
-		<button type='button' class='btn invert'>Применить цену</button>
+		<div class='price_form'>
+			<div class='price_range'>
+				<label class='price_min'>
+					<input type='text' name='price_min' pattern='^[ 0-9]+$' placeholder='минимум' value='100' />
+				</label>
+				<label class='price_max'>
+					<input type='text' name='price_max' pattern='^[ 0-9]+$' placeholder='максимум' value='1000' />
+				</label>
+			</div>
+			<button type='submit' class='btn invert'>Применить цену</button>
+		</div>
 	</div>
 	
-	<div class='fieldset'>
-		<div class='legend'>
-			Производительность, м3/час
-			<button type='button'>></button>
-		</div>
+	<div class='fieldset active'>
+		<button type='button' class='legend' onclick="this.parentNode.classList.toggle('active')">
+			<h3>Производительность, <br /> м3/час</h3>
+			<i class='expand'></i>
+		</button>
 		
 		<div class='list'>
 			<label>
@@ -41,11 +51,11 @@
 		
 	</div>
 	
-	<div class='fieldset'>
-		<div class='legend'>
-			Количество человек
-			<button type='button'>></button>
-		</div>
+	<div class='fieldset active'>
+		<button type='button' class='legend' onclick="this.parentNode.classList.toggle('active')">
+			<h3>Количество человек</h3>
+			<i class='expand'></i>
+		</button>
 		
 		<div class='list'>
 			<label>
@@ -69,13 +79,13 @@
 		
 	</div>
 	
-	<div class='fieldset'>
-		<div class='legend'>
+	<div class='fieldset active'>
+		<button type='button' class='legend' onclick="this.parentNode.classList.toggle('active')">
 			<h3>
 				Тип картриджа
 			</h3>
-			<button type='button'>></button>
-		</div>
+			<i class='expand'></i>
+		</button>
 		
 		<div class='list'>
 			<label>
@@ -128,14 +138,14 @@
 		</div>
 		
 	</div>
-
-	<div class='fieldset'>
-		<div class='legend'>
+	
+	<div class='fieldset active'>
+		<button type='button' class='legend' onclick="this.parentNode.classList.toggle('active')">
 			<h3>
 				Тип загрязнений
 			</h3>
-			<button type='button'>></button>
-		</div>
+			<i class='expand'></i>
+		</button>
 		
 		<div class='list'>
 			<label>
